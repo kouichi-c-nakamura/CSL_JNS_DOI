@@ -59,11 +59,11 @@
   <macro name="access">
     <choose>
       <if variable="DOI">
-        <text value="http://doi.org/" prefix=", "/>
+        <text value="https://doi.org/" prefix=", "/>
         <text variable="DOI"/>
       </if>
       <else-if match="any" variable="PMID">
-        <text value="http://www.ncbi.nlm.nih.gov/pubmed/" prefix=", "/>
+        <text value="https://www.ncbi.nlm.nih.gov/pubmed/" prefix=", "/>
         <text variable="PMID"/>
       </else-if>
       <else-if match="any" variable="URL">
