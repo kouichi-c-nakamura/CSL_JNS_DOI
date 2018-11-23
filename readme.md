@@ -17,6 +17,8 @@ The style is useful in written communication, such as emails.
 
 ## Example output
 
+(Furuta et al., 2001; Nakamura et al., 2014; Hirai et al., 2018)
+
 Furuta T, Tomioka R, Taki K, Nakamura K, Tamamaki N, Kaneko T (2001) In vivo transduction of central neurons using recombinant Sindbis virus: Golgi-like labeling of dendrites and axons with membrane-targeted fluorescent proteins. J Histochem Cytochem 49:1497–1508. https://www.ncbi.nlm.nih.gov/pubmed/11724897
 
 Hirai D, Nakamura KC, Shibata K-I, Tanaka T, Hioki H, Kaneko T, Furuta T (2018) Shaping somatosensory responses in awake rats: cortical modulation of thalamic neurons. Brain Struct Funct 223:851–872. https://doi.org/10.1007/s00429-017-1522-z
