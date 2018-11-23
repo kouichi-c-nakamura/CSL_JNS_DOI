@@ -23,3 +23,8 @@ Hirai D, Nakamura KC, Shibata K-I, Tanaka T, Hioki H, Kaneko T, Furuta T (2017) 
 
 Nakamura KC, Sharott A, Magill PJ (2014) Temporal coupling with cortex distinguishes spontaneous neuronal activities in identified basal ganglia-recipient and cerebellar-recipient zones of the motor thalamus. Cereb Cortex 24:81–97, [https://doi.org/10.1093/cercor/bhs287](https://doi.org/10.1093/cercor/bhs287)
 
+# See also
+
+[CSL-Nature-DOI](https://github.com/kouichi-c-nakamura/CSL-Nature-DOI/)
+
+Nature style with DOI.
