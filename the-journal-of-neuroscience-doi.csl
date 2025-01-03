@@ -1,10 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" page-range-format="expanded" default-locale="en-US">
   <!-- This style was edited with the Visual CSL Editor (http://editor.citationstyles.org/visualEditor/) -->
   <info>
     <title>The Journal of Neuroscience-DOI</title>
     <id>http://www.zotero.org/styles/the-journal-of-neuroscience-doi</id>
     <link href="http://www.zotero.org/styles/the-journal-of-neuroscience-doi" rel="self"/>
+    <link href="http://www.zotero.org/styles/the-journal-of-neuroscience" rel="template"/>
     <link href="http://www.zotero.org/styles/harvard-cite-them-right" rel="template"/>
     <link href="http://www.jneurosci.org/site/misc/ifa_organization.xhtml#References" rel="documentation"/>
     <author>
@@ -24,7 +25,7 @@
     <issn>0270-6474</issn>
     <eissn>1529-2401</eissn>
     <summary>The Journal of Neuroscience style with doi</summary>
-    <updated>2017-10-02T15:32:19+00:00</updated>
+    <updated>2025-01-01T23:00:00+09:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <macro name="editor">
@@ -59,15 +60,13 @@
   <macro name="access">
     <choose>
       <if variable="DOI">
-        <text value="https://doi.org/" prefix=". "/>
-        <text variable="DOI"/>
+        <text variable="DOI" prefix=". https://doi.org/"/>
       </if>
       <else-if match="any" variable="PMID">
-        <text value="https://www.ncbi.nlm.nih.gov/pubmed/" prefix=". "/>
-        <text variable="PMID"/>
+        <text variable="PMID" prefix=". https://www.ncbi.nlm.nih.gov/pubmed/"/>
       </else-if>
-      <else-if match="any" variable="URL">
-        <text variable="URL" prefix=". "/>
+      <else-if variable="URL">
+        <text variable="URL"/>
       </else-if>
     </choose>
   </macro>
@@ -112,6 +111,7 @@
       </else>
     </choose>
   </macro>
+  <!--   formatting citation      -->
   <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" collapse="year">
     <sort>
       <key macro="year-date"/>
@@ -127,12 +127,13 @@
       </group>
     </layout>
   </citation>
-  <bibliography hanging-indent="true" et-al-min="20" et-al-use-first="1">
+  <!--  formatting bibliography  -->
+    <bibliography hanging-indent="true" et-al-min="20" et-al-use-first="1">
     <sort>
       <key macro="author-bib"/>
       <key macro="year-date"/>
     </sort>
-    <layout>
+    <layout suffix=".">
       <group delimiter=" ">
         <text macro="author-bib"/>
         <text macro="year-date" prefix="(" suffix=")"/>
@@ -159,6 +160,16 @@
               <text macro="publisher" prefix=" "/>
             </group>
           </group>
+        </else-if>
+        <else-if type="article" match="any"><!-- article refers to preprints -->
+          <choose>
+            <if variable="container-title" match="any">
+              <text variable="container-title" prefix=" " suffix=":"/>
+              <group delimiter=", ">
+                <text variable="pages"/>                
+              </group>
+            </if>
+          </choose>
         </else-if>
         <else>
           <group suffix="." delimiter=" " prefix=" ">
