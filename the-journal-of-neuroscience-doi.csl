@@ -60,10 +60,10 @@
   <macro name="access">
     <choose>
       <if variable="DOI">
-        <text variable="DOI" prefix=". https://doi.org/"/>
+        <text variable="DOI" prefix=" https://doi.org/"/>
       </if>
       <else-if match="any" variable="PMID">
-        <text variable="PMID" prefix=". https://www.ncbi.nlm.nih.gov/pubmed/"/>
+        <text variable="PMID" prefix=" https://www.ncbi.nlm.nih.gov/pubmed/"/>
       </else-if>
       <else-if variable="URL">
         <text variable="URL"/>
@@ -133,7 +133,7 @@
       <key macro="author-bib"/>
       <key macro="year-date"/>
     </sort>
-    <layout suffix=".">
+    <layout>
       <group delimiter=" ">
         <text macro="author-bib"/>
         <text macro="year-date" prefix="(" suffix=")"/>
@@ -162,11 +162,12 @@
           </group>
         </else-if>
         <else-if type="article" match="any"><!-- article refers to preprints -->
+          <text macro="title" prefix=" " suffix="."/>
           <choose>
-            <if variable="container-title" match="any">
-              <text variable="container-title" prefix=" " suffix=":"/>
+            <if variable="publisher" match="any">
+              <text variable="publisher" prefix=" " suffix=":" font-style="normal" form="short" />
               <group delimiter=", ">
-                <text variable="pages"/>                
+                <text variable="page"/>                
               </group>
             </if>
           </choose>
